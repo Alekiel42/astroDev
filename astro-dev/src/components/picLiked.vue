@@ -5,7 +5,6 @@
     <div
       class="bg-gray-800 rounded-md p-3 m-3"
       v-for="like in favoritePicture"
-      @click="removePictureLiked(like.date)"
       :key="like.date"
     >
       <div class="flex">
@@ -21,6 +20,9 @@
           </p>
           <p class="text-gray-400 text-xs">{{ like.date }}</p>
           <!-- modal : like.explanation -->
+        </div>
+        <div class="ml-8">
+          <ficon icon="trash" @click="removePictureLiked(like.date)" />
         </div>
       </div>
     </div>
