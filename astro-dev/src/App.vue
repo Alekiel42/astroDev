@@ -13,9 +13,12 @@
       <picLiked
         :favoritePicture="like_array"
         @delete-picture-liked="deleteFavoritePicture"
+        @details-picture="addDetailsToModal"
       />
       <planetLiked />
     </div>
+
+    <picDetail v-if="detailsPictureIsShow" :info="detailsPicture" />
   </section>
 </template>
 
@@ -23,6 +26,7 @@
 import picOfDay from "./components/picOfDay.vue";
 import picLiked from "./components/picLiked.vue";
 import planetLiked from "./components/planetLiked.vue";
+import picDetail from "./components/picDetail.vue";
 
 export default {
   name: "App",
@@ -30,10 +34,13 @@ export default {
     picOfDay,
     picLiked,
     planetLiked,
+    picDetail,
   },
   data() {
     return {
       like_array: [],
+      detailsPictureIsShow: false,
+      detailsPicture: null,
     };
   },
   methods: {
@@ -45,6 +52,13 @@ export default {
     deleteFavoritePicture(date) {
       const picLikedLeft = this.like_array.filter((pic) => pic.date !== date);
       this.like_array = picLikedLeft;
+    },
+    addDetailsToModal(date) {
+      const picSelected = this.like_array.find((pic) => pic.date === date);
+      this.detailsPicture = picSelected;
+      this.detailsPictureIsShow = true;
+      console.log("detauk", this.detailsPicture.date);
+      //if no date ?
     },
   },
 };

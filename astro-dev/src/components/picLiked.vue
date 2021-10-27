@@ -5,6 +5,7 @@
     <div
       class="bg-gray-800 rounded-md p-3 m-3"
       v-for="like in favoritePicture"
+      @click="showDetailsPicture(like.date)"
       :key="like.date"
     >
       <div class="flex">
@@ -31,7 +32,7 @@
 
 <script>
 export default {
-  emits: ["delete-picture-liked"],
+  emits: ["delete-picture-liked", "details-picture"],
   props: {
     favoritePicture: {
       type: Array,
@@ -44,6 +45,9 @@ export default {
   methods: {
     removePictureLiked(date) {
       this.$emit("delete-picture-liked", date);
+    },
+    showDetailsPicture(date) {
+      this.$emit("details-picture", date);
     },
   },
 };
