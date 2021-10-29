@@ -1,5 +1,6 @@
 <template>
   <section class="text-white" id="app">
+    <solarSystem />
     <div>
       <h1 class="uppercase text-4xl font-bold mb-2">Astro Dev</h1>
       <p class="italic mb-4">
@@ -27,6 +28,7 @@ import picOfDay from "./components/picOfDay.vue";
 import picLiked from "./components/picLiked.vue";
 import planetLiked from "./components/planetLiked.vue";
 import picDetail from "./components/picDetail.vue";
+import solarSystem from "./components/solarSystem.vue";
 
 export default {
   name: "App",
@@ -35,6 +37,7 @@ export default {
     picLiked,
     planetLiked,
     picDetail,
+    solarSystem,
   },
   data() {
     return {
