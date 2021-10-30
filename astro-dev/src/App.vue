@@ -13,14 +13,15 @@
 
     <solarSystem @change-color-background="changeColorBackground" />
 
-    <picOfDay @add-picture-liked="addFavoritePicture" />
-
     <div class="flex">
-      <picLiked
-        :favoritePicture="like_array"
-        @delete-picture-liked="deleteFavoritePicture"
-        @details-picture="addDetailsToModal"
-      />
+      <div>
+        <picOfDay @add-picture-liked="addFavoritePicture" />
+        <picLiked
+          :favoritePicture="like_array"
+          @delete-picture-liked="deleteFavoritePicture"
+          @details-picture="addDetailsToModal"
+        />
+      </div>
       <planetLiked />
     </div>
 

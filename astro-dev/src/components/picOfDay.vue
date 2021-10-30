@@ -1,11 +1,8 @@
 <template>
   <div class="mb-5">
-    <div
-      class="text-xl p-4 mb-4 bg-indigo-700 rounded-md w-40"
-      v-on:click="callNasa"
-    >
-      New picture
-    </div>
+    <button class="text-md p-3 mb-4 bg-indigo-700 rounded-md" @click="callNasa">
+      Display new pictures
+    </button>
     <div class="flex">
       <div
         v-for="(pic, index) in api_pictures"
@@ -55,7 +52,7 @@ export default {
 
     async callNasa() {
       this.api_pictures = [];
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         const randomDate = this.randomDate();
         await axios
           .get(this.apiNasa + "&date=" + randomDate)
