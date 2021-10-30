@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-none w-2/3 m-4">
+  <div class="flex-none m-4">
     <h2>You like</h2>
     <!-- key date because a pic of day -->
     <div

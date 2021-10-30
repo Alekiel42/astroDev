@@ -14,7 +14,7 @@
     <solarSystem @change-color-background="changeColorBackground" />
 
     <div class="flex">
-      <div>
+      <div class="border-2 m-4 p-2 rounded-lg">
         <picOfDay @add-picture-liked="addFavoritePicture" />
         <picLiked
           :favoritePicture="like_array"
@@ -22,7 +22,9 @@
           @details-picture="addDetailsToModal"
         />
       </div>
-      <planetLiked />
+      <div class="border-2 m-4 p-2 rounded-lg">
+        <planetLiked />
+      </div>
     </div>
 
     <picDetail
