@@ -13,10 +13,11 @@
     </div>
   </div>
   <button class="bg-gray-400 p-2 m-2" @click="toggleInformationVisibility">
-    Show / Hide informations
+    Show / Hide {{ showInformation.name }} informations
   </button>
   <div v-if="informationIsVisible">
-    <p>{{ informationToShow }}</p>
+    <p>Diameter : {{ showInformation.diameter }} km</p>
+    <p>Distance From Sun : {{ showInformation.distanceFromSun }} million km</p>
   </div>
 </template>
 
@@ -27,91 +28,114 @@ export default {
   components: {
     systemSolarObject,
   },
+  computed: {},
+  methods: {
+    setNewObjectSelected(name) {
+      // toogle selector
+      this.systemSolar.forEach((elem) => {
+        name === elem.name ? (elem.selected = true) : (elem.selected = false);
+      });
+
+      // change show information
+      const objectSelected = this.systemSolar.find(
+        (elem) => elem.name === name
+      );
+      this.showInformation = objectSelected;
+
+      /* color background after selecting space objet. From gray (near sun) to black (near pluto). Use of logarithm because of exponentially increasing distances 
+      Math.log(5900) => 8,7
+      */
+      const distancePercentageFromSun =
+        (Math.log(objectSelected.distanceFromSun) / 9) * 100;
+      const invertDistancePercentageFromSun = 100 - distancePercentageFromSun;
+      const distanceConvertedToHexa =
+        (255 * invertDistancePercentageFromSun) / 100;
+      this.$emit(
+        "change-color-background",
+        Math.floor(distanceConvertedToHexa)
+      );
+    },
+    toggleInformationVisibility() {
+      this.informationIsVisible = !this.informationIsVisible;
+    },
+  },
   data() {
     return {
       informationIsVisible: false,
-      informationToShow: "",
+      showInformation: "",
       systemSolar: [
         {
           name: "Sun",
           color: "#ffdb4d",
-          information:
-            "The Sun is the star at the center of the Solar System. It is a nearly perfect ball of hot plasma heated to incandescence by nuclear fusion reactions in its core, radiating the energy mainly as visible light, ultraviolet light, and infrared radiation. ",
+          diameter: 1400000,
+          distanceFromSun: 0,
           selected: false,
         },
         {
           name: "Mercury",
           color: "#b08d02",
-          information:
-            "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets.",
+          diameter: 4800,
+          distanceFromSun: 58,
           selected: false,
         },
         {
           name: "Venus",
           color: "#db8b00",
-          information: "",
+          diameter: 1200,
+          distanceFromSun: 108,
           selected: false,
         },
         {
           name: "Earth",
           color: "#338ca2",
-          information: "",
+          diameter: 12800,
+          distanceFromSun: 150,
           selected: false,
         },
         {
           name: "Mars",
           color: "#990800",
-          information: "",
+          diameter: 6400,
+          distanceFromSun: 227,
           selected: false,
         },
         {
           name: "Jupiter",
           color: "#ffe3a3",
-          information: "",
+          diameter: 142000,
+          distanceFromSun: 778,
           selected: false,
         },
         {
           name: "Saturne",
           color: "#d9b3ff",
-          information: "",
+          diameter: 120000,
+          distanceFromSun: 1457,
           selected: false,
         },
         {
           name: "Uranus",
           color: "#b3f7ff",
-          information: "",
+          diameter: 51300,
+          distanceFromSun: 2870,
           selected: false,
         },
         {
           name: "Neptune",
           color: "#04029e",
-          information: "",
+          diameter: 50000,
+          distanceFromSun: 4500,
           selected: false,
         },
         {
           name: "Pluto",
           color: "#403301",
-          information: "",
+          diameter: 2800,
+          distanceFromSun: 5900,
           selected: false,
         },
       ],
     };
-  },
-  computed: {},
-  methods: {
-    setNewObjectSelected(name) {
-      this.systemSolar.forEach((elem) => {
-        name === elem.name ? (elem.selected = true) : (elem.selected = false);
-      });
-
-      const objectSelected = this.systemSolar.find(
-        (elem) => elem.name === name
-      );
-      this.informationToShow = objectSelected.information;
-    },
-    toggleInformationVisibility() {
-      this.informationIsVisible = !this.informationIsVisible;
-    },
   },
 };
 </script>

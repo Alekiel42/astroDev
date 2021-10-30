@@ -1,5 +1,9 @@
 <template>
-  <section class="text-white" id="app">
+  <section
+    class="text-white"
+    id="app"
+    v-bind:style="{ backgroundColor: this.backgroundRGB }"
+  >
     <div>
       <h1 class="uppercase text-4xl font-bold mb-2">Astro Dev</h1>
       <p class="italic mb-4">
@@ -7,7 +11,7 @@
       </p>
     </div>
 
-    <solarSystem />
+    <solarSystem @change-color-background="changeColorBackground" />
 
     <picOfDay @add-picture-liked="addFavoritePicture" />
 
@@ -45,6 +49,7 @@ export default {
       like_array: [],
       detailsPictureIsShow: false,
       detailsPicture: null,
+      backgroundRGB: "rgb(100, 100, 100)",
     };
   },
   methods: {
@@ -61,8 +66,11 @@ export default {
       const picSelected = this.like_array.find((pic) => pic.date === date);
       this.detailsPicture = picSelected;
       this.detailsPictureIsShow = true;
-      console.log("detauk", this.detailsPicture.date);
       //if no date ?
+    },
+    changeColorBackground(hexa) {
+      this.colorBackground = hexa;
+      this.backgroundRGB = `rgb(${this.colorBackground}, ${this.colorBackground}, ${this.colorBackground})`;
     },
   },
 };
