@@ -24,7 +24,11 @@
       <planetLiked />
     </div>
 
-    <picDetail v-if="detailsPictureIsShow" :info="detailsPicture" />
+    <picDetail
+      v-if="detailsPictureIsShow"
+      :info="detailsPicture"
+      @close-modal="closeModal"
+    />
   </section>
 </template>
 
@@ -63,6 +67,7 @@ export default {
       this.like_array = picLikedLeft;
     },
     addDetailsToModal(date) {
+      console.log(date);
       const picSelected = this.like_array.find((pic) => pic.date === date);
       this.detailsPicture = picSelected;
       this.detailsPictureIsShow = true;
@@ -71,6 +76,9 @@ export default {
     changeColorBackground(hexa) {
       this.colorBackground = hexa;
       this.backgroundRGB = `rgb(${this.colorBackground}, ${this.colorBackground}, ${this.colorBackground})`;
+    },
+    closeModal() {
+      this.detailsPictureIsShow = false;
     },
   },
 };
