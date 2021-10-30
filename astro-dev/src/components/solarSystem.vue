@@ -1,23 +1,29 @@
 <template>
-  <div class="flex mb-8">
-    <div
-      class="flex-initial"
-      v-for="(spaceObject, index) in systemSolar"
-      :key="index"
-    >
-      <systemSolarObject
-        :object="spaceObject"
-        :isSelected="spaceObject.selected"
-        @change-object-selected="setNewObjectSelected"
-      />
+  <div class="border-2 m-4 p-2 rounded-lg">
+    <h2 class="uppercase text-2xl">Travel in space</h2>
+    <div class="flex mb-8">
+      <div
+        class="flex-initial"
+        v-for="(spaceObject, index) in systemSolar"
+        :key="index"
+      >
+        <systemSolarObject
+          :object="spaceObject"
+          :isSelected="spaceObject.selected"
+          @change-object-selected="setNewObjectSelected"
+        />
+      </div>
     </div>
-  </div>
-  <button class="bg-gray-400 p-2 m-2" @click="toggleInformationVisibility">
-    Show / Hide {{ showInformation.name }} informations
-  </button>
-  <div v-if="informationIsVisible">
-    <p>Diameter : {{ showInformation.diameter }} km</p>
-    <p>Distance From Sun : {{ showInformation.distanceFromSun }} million km</p>
+    <button class="bg-gray-400 p-2 m-2" @click="toggleInformationVisibility">
+      {{ informationIsVisible ? "Hide" : "Show" }}
+      {{ showInformation.name }} informations
+    </button>
+    <div v-if="informationIsVisible">
+      <p>Diameter : {{ showInformation.diameter }} km</p>
+      <p>
+        Distance From Sun : {{ showInformation.distanceFromSun }} million km
+      </p>
+    </div>
   </div>
 </template>
 

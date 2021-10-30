@@ -1,6 +1,6 @@
 <template>
   <section
-    class="text-white"
+    class="text-white py-20 px-20"
     id="app"
     v-bind:style="{ backgroundColor: this.backgroundRGB }"
   >
