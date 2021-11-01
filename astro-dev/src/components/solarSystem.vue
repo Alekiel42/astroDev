@@ -1,6 +1,12 @@
 <template>
-  <div class="border-2 m-4 p-2 rounded-lg">
-    <h2 class="uppercase text-2xl">Travel in space</h2>
+  <section class="border-2 mt-6 m-4 p-2 rounded-lg">
+    <div class="relative bottom-6 left-4 uppercase text-2xl text-gray-600">
+      <h2 class="bg-white rounded-md inline px-2">Travel in space</h2>
+      <p class="text-sm text-gray-500">
+        Press left or right keyboard to travel in space
+      </p>
+    </div>
+    <div class="absolute left-40">space</div>
     <div class="flex mb-8 overflow-hidden">
       <div
         class="flex-initial relative"
@@ -25,7 +31,7 @@
         Distance From Sun : {{ showInformation.distanceFromSun }} million km
       </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
