@@ -1,9 +1,10 @@
 <template>
   <div class="border-2 m-4 p-2 rounded-lg">
     <h2 class="uppercase text-2xl">Travel in space</h2>
-    <div class="flex mb-8">
+    <div class="flex mb-8 overflow-hidden">
       <div
-        class="flex-initial"
+        class="flex-initial relative"
+        :style="{ left: positionPlanet + 'px' }"
         v-for="(spaceObject, index) in systemSolar"
         :key="index"
       >
@@ -34,7 +35,12 @@ export default {
   components: {
     systemSolarObject,
   },
-  computed: {},
+  computed: {
+    positionPlanet() {
+      const leftValue = this.positionSpaceShip * -100;
+      return leftValue;
+    },
+  },
   methods: {
     setNewObjectSelected(name) {
       // toogle selector
@@ -63,6 +69,12 @@ export default {
     },
     toggleInformationVisibility() {
       this.informationIsVisible = !this.informationIsVisible;
+    },
+  },
+  props: {
+    positionSpaceShip: {
+      type: Number,
+      default: 0,
     },
   },
   data() {

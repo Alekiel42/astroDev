@@ -3,6 +3,9 @@
     class="text-white py-20 px-20"
     id="app"
     v-bind:style="{ backgroundColor: this.backgroundRGB }"
+    @keydown.left="moveToLeft"
+    @keydown.right="moveToRight"
+    tabindex="0"
   >
     <div>
       <h1 class="uppercase text-4xl font-bold mb-2">Astro Dev</h1>
@@ -11,7 +14,10 @@
       </p>
     </div>
 
-    <solarSystem @change-color-background="changeColorBackground" />
+    <solarSystem
+      @change-color-background="changeColorBackground"
+      :positionSpaceShip="positionSpaceShip"
+    />
 
     <div class="flex">
       <div class="border-2 m-4 p-2 rounded-lg">
@@ -53,6 +59,7 @@ export default {
   },
   data() {
     return {
+      positionSpaceShip: 0,
       like_array: [],
       detailsPictureIsShow: false,
       detailsPicture: null,
@@ -60,6 +67,14 @@ export default {
     };
   },
   methods: {
+    moveToLeft() {
+      this.positionSpaceShip > 0 ? this.positionSpaceShip-- : null;
+      console.log(this.positionSpaceShip);
+    },
+    moveToRight() {
+      this.positionSpaceShip < 7 ? this.positionSpaceShip++ : null;
+      console.log(this.positionSpaceShip);
+    },
     addFavoritePicture(pic) {
       if (!this.like_array.find((picture) => picture.date === pic.date)) {
         this.like_array.push(pic);
