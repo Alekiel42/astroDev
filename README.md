@@ -12,6 +12,13 @@ Le site permet d'afficher de manière aléatoire les photos "Astronomy Picture o
 
 Il est possible de "voyager" dans le système solaire pour avoir plus d'informations sur les planètes et modifier la couleur du site. 
 
+## Screenshots du projet
+
+<img src="./screenshot/astrodev01" alt="screenshot astro-dev" width="300"/>
+<img src="./screenshot/astrodev02" alt="screenshot astro-dev" width="300"/>
+<img src="./screenshot/astrodev03" alt="screenshot astro-dev" width="300"/>
+<img src="./screenshot/astrodev04" alt="screenshot astro-dev" width="300"/>
+
 ## Stack Technique (prérequis) 
 
 ![](https://img.shields.io/badge/-Vue.js-05122A?style=for-the-badge&logo=Vue.js) 
