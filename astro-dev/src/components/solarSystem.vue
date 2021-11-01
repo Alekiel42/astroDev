@@ -49,10 +49,10 @@ export default {
       this.showInformation = objectSelected;
 
       /* color background after selecting space objet. From gray (near sun) to black (near pluto). Use of logarithm because of exponentially increasing distances 
-      Math.log(5900) => 8,7
+      Math.log(4500) => 8,4
       */
       const distancePercentageFromSun =
-        (Math.log(objectSelected.distanceFromSun) / 9) * 100;
+        (Math.log(objectSelected.distanceFromSun) / 8.4) * 100;
       const invertDistancePercentageFromSun = 100 - distancePercentageFromSun;
       const distanceConvertedToHexa =
         (255 * invertDistancePercentageFromSun) / 100;
