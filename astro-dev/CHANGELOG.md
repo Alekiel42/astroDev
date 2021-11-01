@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 - Display scientists' quotes
 - Display "spatial" boardgames 
 - Display new random Planet clicked pictures (API nasa)
-- Animation of a rocket moving between the planets
+- Improve animation of a rocket moving between the planets
 - User account to store favorites pictures and items
 
 ## [0.1.0] - 2021-11-01
