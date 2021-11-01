@@ -71,13 +71,6 @@ export default {
       showInformation: "",
       systemSolar: [
         {
-          name: "Sun",
-          color: "#ffdb4d",
-          diameter: 1400000,
-          distanceFromSun: 0,
-          selected: false,
-        },
-        {
           name: "Mercury",
           color: "#b08d02",
           diameter: 4800,
@@ -131,13 +124,6 @@ export default {
           color: "#04029e",
           diameter: 50000,
           distanceFromSun: 4500,
-          selected: false,
-        },
-        {
-          name: "Pluto",
-          color: "#403301",
-          diameter: 2800,
-          distanceFromSun: 5900,
           selected: false,
         },
       ],
