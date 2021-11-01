@@ -1,13 +1,13 @@
 <template>
-  <div class="mb-5">
+  <section>
     <button class="text-md p-3 mb-4 bg-indigo-700 rounded-md" @click="callNasa">
       Display new pictures
     </button>
-    <div class="flex">
+    <div class="flex flex-wrap">
       <div
         v-for="(pic, index) in api_pictures"
         :key="index"
-        class="flex-1 m-1"
+        class="m-1"
         @click="addPictureLiked(pic)"
       >
         <img
@@ -18,7 +18,7 @@
         <div>{{ pic.date }}</div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -52,7 +52,7 @@ export default {
 
     async callNasa() {
       this.api_pictures = [];
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
         const randomDate = this.randomDate();
         await axios
           .get(this.apiNasa + "&date=" + randomDate)

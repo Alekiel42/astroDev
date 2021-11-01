@@ -1,6 +1,6 @@
 <template>
   <section
-    class="text-white py-20 px-20"
+    class="text-white p-20"
     id="app"
     v-bind:style="{ backgroundColor: this.backgroundRGB }"
     @keydown.left="moveToLeft"
@@ -19,15 +19,13 @@
       :positionSpaceShip="positionSpaceShip"
     />
 
-    <div class="flex">
-      <div class="border-2 m-4 p-2 rounded-lg">
-        <picOfDay @add-picture-liked="addFavoritePicture" />
-        <picLiked
-          :favoritePicture="like_array"
-          @delete-picture-liked="deleteFavoritePicture"
-          @details-picture="addDetailsToModal"
-        />
-      </div>
+    <div class="border-2 m-4 p-2 rounded-lg">
+      <picOfDay @add-picture-liked="addFavoritePicture" />
+      <picLiked
+        :favoritePicture="like_array"
+        @delete-picture-liked="deleteFavoritePicture"
+        @details-picture="addDetailsToModal"
+      />
     </div>
 
     <picDetail
