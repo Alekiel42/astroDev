@@ -28,9 +28,6 @@
           @details-picture="addDetailsToModal"
         />
       </div>
-      <div class="border-2 m-4 p-2 rounded-lg">
-        <planetLiked />
-      </div>
     </div>
 
     <picDetail
@@ -44,7 +41,6 @@
 <script>
 import picOfDay from "./components/picOfDay.vue";
 import picLiked from "./components/picLiked.vue";
-import planetLiked from "./components/planetLiked.vue";
 import picDetail from "./components/picDetail.vue";
 import solarSystem from "./components/solarSystem.vue";
 
@@ -53,7 +49,6 @@ export default {
   components: {
     picOfDay,
     picLiked,
-    planetLiked,
     picDetail,
     solarSystem,
   },
