@@ -1,4 +1,4 @@
-# astro-dev
+# ASTRO-DEV v0.1.0.
 
 ![](https://img.shields.io/badge/-Vue.js-05122A?style=for-the-badge&logo=Vue.js) ![](https://img.shields.io/badge/-Tailwind-05122A?style=for-the-badge&logo=TailwindCSS) 
 
