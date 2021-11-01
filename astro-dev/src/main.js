@@ -3,9 +3,9 @@ import App from './App.vue'
 import './index.css'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faSpaceShuttle } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faTrash);
+library.add(faTrash, faSpaceShuttle);
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 

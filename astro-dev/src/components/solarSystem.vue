@@ -2,11 +2,13 @@
   <section class="border-2 mt-6 m-4 p-2 rounded-lg">
     <div class="relative bottom-6 left-4 uppercase text-2xl text-gray-600">
       <h2 class="bg-white rounded-md inline px-2">Travel in space</h2>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-white">
         Press left or right keyboard to travel in space
       </p>
     </div>
-    <div class="absolute left-40">space</div>
+    <div class="absolute left-40">
+      <ficon icon="space-shuttle" class="transform" />
+    </div>
     <div class="flex mb-8 overflow-hidden">
       <div
         class="flex-initial relative"
@@ -21,7 +23,10 @@
         />
       </div>
     </div>
-    <button class="bg-gray-400 p-2 m-2" @click="toggleInformationVisibility">
+    <button
+      class="bg-indigo-700 p-2 m-2 rounded-md"
+      @click="toggleInformationVisibility"
+    >
       {{ informationIsVisible ? "Hide" : "Show" }}
       {{ showInformation.name }} informations
     </button>
