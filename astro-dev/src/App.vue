@@ -1,7 +1,6 @@
 <template>
   <section
     class="text-white p-20"
-    id="app"
     v-bind:style="{ backgroundColor: this.backgroundRGB }"
     @keydown.left="moveToLeft"
     @keydown.right="moveToRight"
