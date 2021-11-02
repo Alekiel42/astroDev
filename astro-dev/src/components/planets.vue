@@ -8,10 +8,13 @@
   >
     <div
       class="w-14 h-14 m-2 rounded-full"
-      v-bind:style="{ backgroundColor: planet.color }"
+      :style="{
+        backgroundColor: planet.color,
+        width: diameterCirclePlanet + 'px',
+        height: diameterCirclePlanet + 'px',
+      }"
     ></div>
   </div>
-  <p>{{ planet.name }}</p>
 </template>
 
 <script>
@@ -28,13 +31,22 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      diameterCirclePlanet: 10,
+    };
   },
   computed: {},
   methods: {
     selectObject() {
       this.$emit("change-object-selected", this.planet.name);
     },
+  },
+  mounted() {
+    // max diam circle * this planet diameter / largest planet diameter
+    this.diameterCirclePlanet = Math.ceil(
+      (200 * this.planet.diameter) / 142000
+    );
+    console.log("diam", this.diameterCirclePlanet);
   },
 };
 </script>

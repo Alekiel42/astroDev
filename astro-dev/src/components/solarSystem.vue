@@ -6,13 +6,13 @@
         Press left or right keyboard to travel in space
       </p>
     </div>
-    <div class="absolute left-40">
+    <div class="absolute left-40 z-10">
       <ficon icon="space-shuttle" class="transform" />
     </div>
 
     <div class="overflow-hidden">
       <div class="flex mb-32 relative" :style="{ left: positionPlanet + 'px' }">
-        <!-- calcul log pour distance -->
+        <!-- TODO calcul log pour distance -->
         <div
           class="flex-initial absolute"
           :style="{ 'margin-left': planet.distanceFromSun * 1.5 + 'px' }"
