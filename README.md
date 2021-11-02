@@ -14,10 +14,8 @@ Il est possible de "voyager" dans le système solaire pour avoir plus d'informat
 
 ## Screenshots du projet
 
-<img src="./screenshot/astrodev01" alt="screenshot astro-dev" width="300"/>
-<img src="./screenshot/astrodev02" alt="screenshot astro-dev" width="300"/>
-<img src="./screenshot/astrodev03" alt="screenshot astro-dev" width="300"/>
-<img src="./screenshot/astrodev04" alt="screenshot astro-dev" width="300"/>
+<img src="./screenshot/astrodev01" alt="screenshot astro-dev" width="300"/><img src="./screenshot/astrodev02" alt="screenshot astro-dev" width="300"/>
+<img src="./screenshot/astrodev03" alt="screenshot astro-dev" width="300"/><img src="./screenshot/astrodev04" alt="screenshot astro-dev" width="300"/>
 
 ## Stack Technique (prérequis) 
 
