@@ -13,12 +13,12 @@
       <div
         class="flex-initial relative"
         :style="{ left: positionPlanet + 'px' }"
-        v-for="(spaceObject, index) in systemSolar"
+        v-for="(planet, index) in systemSolar"
         :key="index"
       >
-        <systemSolarObject
-          :object="spaceObject"
-          :isSelected="spaceObject.selected"
+        <planets
+          :planet="planet"
+          :isSelected="planet.selected"
           @change-object-selected="setNewObjectSelected"
         />
       </div>
@@ -29,12 +29,12 @@
 </template>
 
 <script>
-import systemSolarObject from "./spaceObject.vue";
+import planets from "./planets.vue";
 import planetInformations from "./planetInformations.vue";
 
 export default {
   components: {
-    systemSolarObject,
+    planets,
     planetInformations,
   },
   computed: {
@@ -79,7 +79,7 @@ export default {
   },
   data() {
     return {
-      showInformation: "",
+      showInformation: {},
       systemSolar: [
         {
           name: "Mercury",

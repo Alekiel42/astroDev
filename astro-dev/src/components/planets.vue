@@ -1,22 +1,22 @@
 <template>
   <div
-    class="rounded-full border-solid border-4 border-white m-2"
+    class="rounded-full border-solid border-4 border-white m-4"
     :class="isSelected ? 'border-opacity-100' : 'border-opacity-0'"
     @click="selectObject"
   >
     <div
       class="w-14 h-14 m-2 rounded-full"
-      v-bind:style="{ backgroundColor: object.color }"
+      v-bind:style="{ backgroundColor: planet.color }"
     ></div>
   </div>
-  <p>{{ object.name }}</p>
+  <p>{{ planet.name }}</p>
 </template>
 
 <script>
 export default {
   emits: ["change-object-selected"],
   props: {
-    object: {
+    planet: {
       type: Object,
       default: () => {},
     },
@@ -31,7 +31,7 @@ export default {
   computed: {},
   methods: {
     selectObject() {
-      this.$emit("change-object-selected", this.object.name);
+      this.$emit("change-object-selected", this.planet.name);
     },
   },
 };
