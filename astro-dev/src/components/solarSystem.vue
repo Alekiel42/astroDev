@@ -23,29 +23,19 @@
         />
       </div>
     </div>
-    <button
-      class="bg-indigo-700 p-2 m-2 rounded-md"
-      @click="toggleInformationVisibility"
-    >
-      {{ informationIsVisible ? "Hide" : "Show" }}
-      {{ showInformation.name }} informations
-    </button>
-    <!-- information -->
-    <div v-if="informationIsVisible">
-      <p>Diameter : {{ showInformation.diameter }} km</p>
-      <p>
-        Distance From Sun : {{ showInformation.distanceFromSun }} million km
-      </p>
-    </div>
+
+    <planetInformations :infoPlanetSelected="showInformation" />
   </section>
 </template>
 
 <script>
 import systemSolarObject from "./spaceObject.vue";
+import planetInformations from "./planetInformations.vue";
 
 export default {
   components: {
     systemSolarObject,
+    planetInformations,
   },
   computed: {
     positionPlanet() {
@@ -74,13 +64,11 @@ export default {
       const invertDistancePercentageFromSun = 100 - distancePercentageFromSun;
       const distanceConvertedToHexa =
         (255 * invertDistancePercentageFromSun) / 100;
+
       this.$emit(
         "change-color-background",
         Math.floor(distanceConvertedToHexa)
       );
-    },
-    toggleInformationVisibility() {
-      this.informationIsVisible = !this.informationIsVisible;
     },
   },
   props: {
@@ -91,7 +79,6 @@ export default {
   },
   data() {
     return {
-      informationIsVisible: false,
       showInformation: "",
       systemSolar: [
         {
