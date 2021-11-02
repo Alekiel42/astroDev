@@ -1,8 +1,8 @@
 <template>
-  <section class="border-2 mt-6 m-4 p-2 rounded-lg">
-    <div class="relative bottom-6 left-4 uppercase text-2xl text-gray-600">
-      <h2 class="bg-white rounded-md inline px-2">Travel in space</h2>
-      <p class="text-sm text-white">
+  <section class="mt-6 m-4 rounded-md bg-gray-900">
+    <div class="relative bottom-4 left-6 uppercase text-2xl text-gray-100">
+      <h2 class="bg-gray-900 rounded-md inline px-4">Travel in space</h2>
+      <p class="text-sm text-gray-400 px-4">
         Press left or right keyboard to travel in space
       </p>
     </div>
@@ -30,6 +30,7 @@
       {{ informationIsVisible ? "Hide" : "Show" }}
       {{ showInformation.name }} informations
     </button>
+    <!-- information -->
     <div v-if="informationIsVisible">
       <p>Diameter : {{ showInformation.diameter }} km</p>
       <p>
