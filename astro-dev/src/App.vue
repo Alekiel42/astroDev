@@ -58,11 +58,9 @@ export default {
   methods: {
     moveToLeft() {
       this.positionSpaceShip > 0 ? this.positionSpaceShip-- : null;
-      console.log(this.positionSpaceShip);
     },
     moveToRight() {
-      this.positionSpaceShip < 7 ? this.positionSpaceShip++ : null;
-      console.log(this.positionSpaceShip);
+      this.positionSpaceShip < 70 ? this.positionSpaceShip++ : null;
     },
     addFavoritePicture(pic) {
       if (!this.like_array.find((picture) => picture.date === pic.date)) {

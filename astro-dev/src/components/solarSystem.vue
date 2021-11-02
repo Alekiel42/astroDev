@@ -9,18 +9,22 @@
     <div class="absolute left-40">
       <ficon icon="space-shuttle" class="transform" />
     </div>
-    <div class="flex mb-8 overflow-hidden">
-      <div
-        class="flex-initial relative"
-        :style="{ left: positionPlanet + 'px' }"
-        v-for="(planet, index) in systemSolar"
-        :key="index"
-      >
-        <planets
-          :planet="planet"
-          :isSelected="planet.selected"
-          @change-object-selected="setNewObjectSelected"
-        />
+
+    <div class="overflow-hidden">
+      <div class="flex mb-32 relative" :style="{ left: positionPlanet + 'px' }">
+        <!-- calcul log pour distance -->
+        <div
+          class="flex-initial absolute"
+          :style="{ 'margin-left': planet.distanceFromSun * 1.5 + 'px' }"
+          v-for="(planet, index) in systemSolar"
+          :key="index"
+        >
+          <planets
+            :planet="planet"
+            :isSelected="planet.selected"
+            @change-object-selected="setNewObjectSelected"
+          />
+        </div>
       </div>
     </div>
 

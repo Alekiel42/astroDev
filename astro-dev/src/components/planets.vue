@@ -1,6 +1,8 @@
 <template>
+  <!-- margine right ici pour distance -->
+  <!-- :style="{ 'margin-left': planet.distanceFromSun + 'px' }" -->
   <div
-    class="rounded-full border-solid border-4 border-white m-4"
+    class="rounded-full border-solid border-4 border-white"
     :class="isSelected ? 'border-opacity-100' : 'border-opacity-0'"
     @click="selectObject"
   >

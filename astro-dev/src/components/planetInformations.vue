@@ -7,7 +7,7 @@
     {{ infoPlanetSelected.name }}
     informations
   </button>
-  <div v-if="informationIsVisible && showInformation !== ''">
+  <div v-if="informationIsVisible && showInformation !== ''" class="m-4 pb-4">
     <p>Diameter : {{ infoPlanetSelected.diameter }} km</p>
     <p>
       Distance From Sun :{{ infoPlanetSelected.distanceFromSun }} million km
