@@ -1,18 +1,12 @@
 <template>
   <section
     class="text-white p-20"
-    id="app"
     v-bind:style="{ backgroundColor: this.backgroundRGB }"
     @keydown.left="moveToLeft"
     @keydown.right="moveToRight"
     tabindex="0"
   >
-    <div>
-      <h1 class="uppercase text-4xl font-bold mb-2">Astro Dev</h1>
-      <p class="italic mb-4">
-        when I was young I wanted to be an astrophysicist
-      </p>
-    </div>
+    <headerAstro />
 
     <solarSystem
       @change-color-background="changeColorBackground"
@@ -41,6 +35,7 @@ import picOfDay from "./components/picOfDay.vue";
 import picLiked from "./components/picLiked.vue";
 import picDetail from "./components/picDetail.vue";
 import solarSystem from "./components/solarSystem.vue";
+import headerAstro from "./components/header.vue";
 
 export default {
   name: "App",
@@ -49,6 +44,7 @@ export default {
     picLiked,
     picDetail,
     solarSystem,
+    headerAstro,
   },
   data() {
     return {
