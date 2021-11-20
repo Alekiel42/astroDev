@@ -14,6 +14,8 @@
     <PlanetSystem
       @change-color-background="changeColorBackground"
       :positionSpaceShip="positionSpaceShip"
+      @touchstart="getStartFinger"
+      @touchend="getEndFinger"
     />
 
     <base-card title="Great Pictures" mode="padding">
@@ -51,6 +53,8 @@ export default {
   },
   data() {
     return {
+      startFingerTouch: 0,
+      endFingerTouch: 0,
       positionSpaceShip: 0,
       like_array: [],
       detailsPictureIsShow: false,
@@ -58,12 +62,24 @@ export default {
       backgroundRGB: "rgb(100, 100, 100)",
     };
   },
+  watch: {
+    endFingerTouch() {
+      const distance = (this.endFingerTouch - this.startFingerTouch) / 400;
+      this.positionSpaceShip -= distance;
+    },
+  },
   methods: {
     moveToLeft() {
       this.positionSpaceShip > 0 ? this.positionSpaceShip-- : null;
     },
     moveToRight() {
       this.positionSpaceShip < 70 ? this.positionSpaceShip++ : null;
+    },
+    getStartFinger(e) {
+      this.startFingerTouch = e.touches[0].clientX;
+    },
+    getEndFinger(e) {
+      this.endFingerTouch = e.changedTouches[0].clientX;
     },
     addFavoritePicture(pic) {
       if (!this.like_array.find((picture) => picture.date === pic.date)) {

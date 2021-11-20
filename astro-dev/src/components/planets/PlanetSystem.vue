@@ -41,7 +41,6 @@ export default {
       return leftValue;
     },
     messageAccordingToScreen() {
-      console.log(this.windowWidth);
       return this.windowWidth > 700
         ? "Press left or right keyboard to travel in space"
         : "Travel in space with your finger";
