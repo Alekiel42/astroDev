@@ -16,7 +16,7 @@
           v-for="(planet, index) in systemSolar"
           :key="index"
         >
-          <planets
+          <PlanetItem
             :planet="planet"
             :isSelected="planet.selected"
             @change-object-selected="setNewObjectSelected"
@@ -25,18 +25,18 @@
       </div>
     </div>
 
-    <planetInformations :infoPlanetSelected="showInformation" />
+    <PlanetItemInformations :infoPlanetSelected="showInformation" />
   </base-card>
 </template>
 
 <script>
-import planets from "./planets.vue";
-import planetInformations from "./planetInformations.vue";
+import PlanetItem from "./PlanetItem.vue";
+import PlanetItemInformations from "./PlanetItemInformations.vue";
 
 export default {
   components: {
-    planets,
-    planetInformations,
+    PlanetItem,
+    PlanetItemInformations,
   },
   computed: {
     positionPlanet() {

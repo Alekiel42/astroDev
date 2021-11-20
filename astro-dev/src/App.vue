@@ -11,7 +11,7 @@
       quote="When I was young I wanted to be an astrophysicist"
     ></the-header>
 
-    <solarSystem
+    <PlanetSystem
       @change-color-background="changeColorBackground"
       :positionSpaceShip="positionSpaceShip"
     />
@@ -37,7 +37,7 @@
 import PictureNasaRamdomDay from "./components/pictures/PictureNasaRandomDay.vue";
 import PictureLiked from "./components/pictures/PictureLiked.vue";
 import PictureLikedDetail from "./components/pictures/PictureLikedDetail.vue";
-import solarSystem from "./components/solarSystem.vue";
+import PlanetSystem from "./components/planets/PlanetSystem.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
 
 export default {
@@ -46,7 +46,7 @@ export default {
     PictureNasaRamdomDay,
     PictureLiked,
     PictureLikedDetail,
-    solarSystem,
+    PlanetSystem,
     TheHeader,
   },
   data() {
