@@ -6,7 +6,10 @@
     @keydown.right="moveToRight"
     tabindex="0"
   >
-    <headerAstro />
+    <the-header
+      title="Astro Dev"
+      quote="When I was young I wanted to be an astrophysicist"
+    ></the-header>
 
     <solarSystem
       @change-color-background="changeColorBackground"
@@ -35,7 +38,7 @@ import picOfDay from "./components/picOfDay.vue";
 import picLiked from "./components/picLiked.vue";
 import picDetail from "./components/picDetail.vue";
 import solarSystem from "./components/solarSystem.vue";
-import headerAstro from "./components/header.vue";
+import TheHeader from "./components/layouts/TheHeader.vue";
 
 export default {
   name: "App",
@@ -44,7 +47,7 @@ export default {
     picLiked,
     picDetail,
     solarSystem,
-    headerAstro,
+    TheHeader,
   },
   data() {
     return {
