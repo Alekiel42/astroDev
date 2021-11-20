@@ -1,5 +1,16 @@
 <template>
-  <button class="bg-yellow-700 p-2 m-2 rounded-md">
+  <button
+    class="
+      bg-indigo-600
+      hover:bg-indigo-800
+      transition
+      duratiion-500
+      ease-in-out
+      p-2
+      m-2
+      rounded-md
+    "
+  >
     <slot></slot>
   </button>
 </template>
