@@ -17,14 +17,14 @@
     />
 
     <base-card title="Great Pictures" mode="padding">
-      <picOfDay @add-picture-liked="addFavoritePicture" />
-      <picLiked
+      <PictureNasaRamdomDay @add-picture-liked="addFavoritePicture" />
+      <PictureLiked
         :favoritePicture="like_array"
         @delete-picture-liked="deleteFavoritePicture"
         @details-picture="addDetailsToModal"
       />
 
-      <picDetail
+      <PictureLikedDetail
         v-if="detailsPictureIsShow"
         :info="detailsPicture"
         @close-modal="closeModal"
@@ -34,18 +34,18 @@
 </template>
 
 <script>
-import picOfDay from "./components/picOfDay.vue";
-import picLiked from "./components/picLiked.vue";
-import picDetail from "./components/picDetail.vue";
+import PictureNasaRamdomDay from "./components/pictures/PictureNasaRandomDay.vue";
+import PictureLiked from "./components/pictures/PictureLiked.vue";
+import PictureLikedDetail from "./components/pictures/PictureLikedDetail.vue";
 import solarSystem from "./components/solarSystem.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
 
 export default {
   name: "App",
   components: {
-    picOfDay,
-    picLiked,
-    picDetail,
+    PictureNasaRamdomDay,
+    PictureLiked,
+    PictureLikedDetail,
     solarSystem,
     TheHeader,
   },
