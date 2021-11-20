@@ -9,12 +9,10 @@
         h-screen
       "
     >
-      <button
-        class="absolute p-2 m-6 rounded-sm bg-indigo-600 text-gray-200 right-10"
-        @click="closeModal"
-      >
+      <!-- todo class à gérer avec mode -->
+      <base-button class="absolute right-10" @click="closeModal">
         Close
-      </button>
+      </base-button>
       <div class="bg-gray-800 p-10 rounded-lg">
         <!-- todo alt -->
 

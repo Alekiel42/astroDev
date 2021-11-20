@@ -1,12 +1,9 @@
 <template>
-  <button
-    class="bg-indigo-700 p-2 m-2 rounded-md"
-    @click="toggleInformationVisibility"
-  >
+  <base-button @click="toggleInformationVisibility">
     {{ informationIsVisible ? "Hide" : "Show" }}
     {{ infoPlanetSelected.name }}
     informations
-  </button>
+  </base-button>
   <div v-if="informationIsVisible && showInformation !== ''" class="m-4 pb-4">
     <p>Diameter : {{ infoPlanetSelected.diameter }} km</p>
     <p>

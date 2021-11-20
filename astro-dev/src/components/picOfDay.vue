@@ -1,8 +1,6 @@
 <template>
   <section>
-    <button class="text-md p-3 mb-4 bg-indigo-700 rounded-md" @click="callNasa">
-      Display new pictures
-    </button>
+    <base-button @click="callNasa"> Display new pictures </base-button>
     <div class="flex flex-wrap">
       <div
         v-for="(pic, index) in api_pictures"

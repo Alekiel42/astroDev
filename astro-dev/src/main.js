@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import BaseButton from './components/UI/BaseButton.vue';
 import './index.css'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -9,6 +10,9 @@ library.add(faTrash, faSpaceShuttle);
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-createApp(App)
-    .component('ficon', FontAwesomeIcon)
-    .mount('#app')
+const app = createApp(App);
+
+app.component('ficon', FontAwesomeIcon);
+app.component('base-button', BaseButton);
+
+app.mount('#app')
