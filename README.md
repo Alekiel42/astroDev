@@ -12,6 +12,10 @@ Le site permet d'afficher de manière aléatoire les photos "Astronomy Picture o
 
 Il est possible de "voyager" dans le système solaire pour avoir plus d'informations sur les planètes et modifier la couleur du site. 
 
+## Découvrir le site en ligne
+
+https://astrodev.alexandrabercoff.com/
+
 ## Screenshots du projet
 
 <img src="./screenshot/astrodev01" alt="screenshot astro-dev" width="300"/>
