@@ -1,8 +1,5 @@
 <template>
-  <base-card
-    title="Travel in space"
-    information="Press left or right keyboard to travel in space"
-  >
+  <base-card title="Travel in space" :information="messageAccordingToScreen">
     <div class="absolute left-40 z-10">
       <ficon icon="space-shuttle" class="transform" />
     </div>
@@ -43,6 +40,12 @@ export default {
       const leftValue = this.positionSpaceShip * -100;
       return leftValue;
     },
+    messageAccordingToScreen() {
+      console.log(this.windowWidth);
+      return this.windowWidth > 700
+        ? "Press left or right keyboard to travel in space"
+        : "Travel in space with your finger";
+    },
   },
   methods: {
     setNewObjectSelected(name) {
@@ -80,6 +83,7 @@ export default {
   },
   data() {
     return {
+      windowWidth: window.innerWidth,
       showInformation: {},
       systemSolar: [
         {
