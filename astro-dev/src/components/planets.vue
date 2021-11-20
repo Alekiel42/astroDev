@@ -46,7 +46,6 @@ export default {
     this.diameterCirclePlanet = Math.ceil(
       (200 * this.planet.diameter) / 142000
     );
-    console.log("diam", this.diameterCirclePlanet);
   },
 };
 </script>

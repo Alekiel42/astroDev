@@ -13,20 +13,20 @@
       :positionSpaceShip="positionSpaceShip"
     />
 
-    <div class="border-2 m-4 p-2 rounded-lg">
+    <base-card title="Great Pictures" mode="padding">
       <picOfDay @add-picture-liked="addFavoritePicture" />
       <picLiked
         :favoritePicture="like_array"
         @delete-picture-liked="deleteFavoritePicture"
         @details-picture="addDetailsToModal"
       />
-    </div>
 
-    <picDetail
-      v-if="detailsPictureIsShow"
-      :info="detailsPicture"
-      @close-modal="closeModal"
-    />
+      <picDetail
+        v-if="detailsPictureIsShow"
+        :info="detailsPicture"
+        @close-modal="closeModal"
+      />
+    </base-card>
   </section>
 </template>
 
@@ -72,7 +72,6 @@ export default {
       this.like_array = picLikedLeft;
     },
     addDetailsToModal(date) {
-      console.log(date);
       const picSelected = this.like_array.find((pic) => pic.date === date);
       this.detailsPicture = picSelected;
       this.detailsPictureIsShow = true;

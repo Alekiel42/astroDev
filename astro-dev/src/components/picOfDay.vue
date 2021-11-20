@@ -66,7 +66,6 @@ export default {
 
   async mounted() {
     await this.callNasa();
-    console.log(this.api_pictures);
   },
 };
 </script>

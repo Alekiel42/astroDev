@@ -1,11 +1,8 @@
 <template>
-  <section class="mt-6 m-4 rounded-md bg-gray-900">
-    <div class="relative bottom-4 left-6 uppercase text-2xl text-gray-100">
-      <h2 class="bg-gray-900 rounded-md inline px-4">Travel in space</h2>
-      <p class="text-sm text-gray-400 px-4">
-        Press left or right keyboard to travel in space
-      </p>
-    </div>
+  <base-card
+    title="Travel in space"
+    information="Press left or right keyboard to travel in space"
+  >
     <div class="absolute left-40 z-10">
       <ficon icon="space-shuttle" class="transform" />
     </div>
@@ -29,7 +26,7 @@
     </div>
 
     <planetInformations :infoPlanetSelected="showInformation" />
-  </section>
+  </base-card>
 </template>
 
 <script>
