@@ -1,32 +1,21 @@
 <template>
-  <div class="absolute top-0 left-0 z-10">
-    <div
-      class="
-        bg-gray-900 bg-opacity-25
-        backdrop-filter backdrop-blur-md
-        p-10
-        fixed
-        h-screen
-      "
-    >
-      <!-- todo class à gérer avec mode -->
-      <base-button class="absolute right-10" @click="closeModal">
-        Close
-      </base-button>
-      <div class="bg-gray-800 p-10 rounded-lg">
-        <!-- todo alt -->
+  <base-dialog>
+    <base-button class="absolute right-10" @click="closeModal">
+      Close
+    </base-button>
+    <div class="bg-gray-800 p-10 rounded-lg">
+      <!-- todo alt -->
 
-        <div class="flex">
-          <img
-            class="object-cover rounded-2xl w-1/4 mr-6"
-            v-bind:src="info.hdurl"
-            alt=""
-          />
-          <p class="mt-4 mr-24 ml-10 text-md">{{ info.explanation }}</p>
-        </div>
+      <div class="flex">
+        <img
+          class="object-cover rounded-2xl w-1/4 mr-6"
+          v-bind:src="info.hdurl"
+          alt=""
+        />
+        <p class="mt-4 mr-24 ml-10 text-md">{{ info.explanation }}</p>
       </div>
     </div>
-  </div>
+  </base-dialog>
 </template>
 
 <script>
