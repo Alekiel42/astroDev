@@ -4,11 +4,14 @@
     {{ infoPlanetSelected.name }}
     informations
   </base-button>
-  <div v-if="informationIsVisible && showInformation !== ''" class="m-4 pb-4">
-    <p>Diameter : {{ infoPlanetSelected.diameter }} km</p>
-    <p>
-      Distance From Sun :{{ infoPlanetSelected.distanceFromSun }} million km
-    </p>
+  <div v-if="informationIsVisible" class="m-4 pb-4">
+    <div v-if="infoPlanetSelected.name">
+      <p>Diameter : {{ infoPlanetSelected.diameter }} km</p>
+      <p>
+        Distance From Sun :{{ infoPlanetSelected.distanceFromSun }} million km
+      </p>
+    </div>
+    <div v-else>Please select a planet</div>
   </div>
 </template>
 
